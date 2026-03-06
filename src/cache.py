@@ -1,5 +1,6 @@
 from collections import deque
 from collections import OrderedDict
+import random
 
 def read_input(file_path):
     with open(file_path, 'r') as file:
@@ -78,6 +79,14 @@ def optff_cache(k, m, requests):
         cache[request] = next_index
     
     return misses
+
+def generate_input(filename, k, m):
+    with open(filename, "w") as f:
+        f.write(str(k) + " " + str(m) + "\n")
+        for i in range(m):
+            f.write(str(random.randint(1, 9)))
+            if i != m - 1:
+                f.write(" ")
 
 def main():
     call_caches('tests/test1.txt')
