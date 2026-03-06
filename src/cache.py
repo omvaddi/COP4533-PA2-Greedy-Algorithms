@@ -24,7 +24,7 @@ def fifo_cache(k, requests):
     misses = 0
     
     for request in requests:
-        if request not in cache:
+        if request not in cache_set:
             if len(cache) == k:
                 oldest = cache.popleft()
                 cache_set.remove(oldest)
