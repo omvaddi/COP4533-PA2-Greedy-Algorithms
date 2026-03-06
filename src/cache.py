@@ -13,9 +13,11 @@ def call_caches(file_path):
     
     fifo_misses = fifo_cache(k, requests)
     lru_misses = lru_cache(k, requests)
+    optff_misses = optff_cache(k, m, requests)
     
     print(f"FIFO : {fifo_misses}")
     print(f"LRU : {lru_misses}")
+    print(f"OPTFF : {optff_misses}")
 
 
 def fifo_cache(k, requests):
@@ -51,7 +53,32 @@ def lru_cache(k, requests):
 
     return misses        
 
-                    
+def optff_cache(k, m, requests):
+    cache = dict()
+    misses = 0
+    
+    for i in range(m):
+        request = requests[i]
+        next_index = m
+        for j in range(i + 1, m):
+            if request == requests[j]:
+                next_index = j
+                break
+        if request not in cache:
+            if(len(cache) == k):
+                max_req = -1
+                for req in cache:
+                    if max_req == -1:
+                        max_req = req
+                    else:
+                        if cache[req] > cache[max_req]:
+                            max_req = req
+                del cache[max_req]
+            misses += 1
+        cache[request] = next_index
+    
+    return misses
+
 def main():
     call_caches('tests/test1.txt')
 
