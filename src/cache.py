@@ -84,12 +84,19 @@ def generate_input(filename, k, m):
     with open(filename, "w") as f:
         f.write(str(k) + " " + str(m) + "\n")
         for i in range(m):
-            f.write(str(random.randint(1, 9)))
+            f.write(str(random.randint(1, 20)))
             if i != m - 1:
                 f.write(" ")
 
 def main():
-    call_caches('tests/test1.txt')
+    k = random.randint(5, 10)
+    m = random.randint(50, 100)
+    # generate_input("tests/test3.txt", k, m)
 
+    call_caches("tests/test1.txt")
+    print()
+    call_caches("tests/test2.txt")
+    print()
+    call_caches("tests/test3.txt")
 if __name__ == "__main__":
     main()

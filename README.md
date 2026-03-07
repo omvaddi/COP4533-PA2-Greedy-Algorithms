@@ -1,3 +1,20 @@
+Question 1: Empirical Comparison
+Use at least three nontrivial input files (each containing 50 or more requests).
+
+For each file, report the number of cache misses for each policy.
+
+Input File	    |k	|m	 |FIFO |LRU |OPTFF
+tests/test1.txt	|5	|84	 |66   |67 |43
+tests/test2.txt |8  |64  |36   |40 |26
+tests/test3.txt |10 |66  |33   |31 |22
+
+Briefly comment:
+    Does OPTFF have the fewest misses?
+    Yes, OPTFF had the lowest number of misses for all three input files.
+
+    How does FIFO compare to LRU?
+    FIFO and LRU have very similar number of misses. The differences are small (1-4 misses per file). FIFO had fewer misses than LRU in the first two files, whereas in the third file, LRU had fewer misses than FIFO.
+
 Question 3: Prove OPTFF is Optimal
 Let OPTFF be Belady’s Farthest-in-Future algorithm.
 Let ( A ) be any offline algorithm that knows the full request sequence.
