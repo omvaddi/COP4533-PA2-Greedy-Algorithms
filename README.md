@@ -28,11 +28,10 @@ Question 1: Empirical Comparison
 Use at least three nontrivial input files (each containing 50 or more requests).
 
 For each file, report the number of cache misses for each policy.
-
 Input File	    |k	|m	 |FIFO |LRU |OPTFF
-files/file1.txt	|5	|84	 |66   |67 |43
-files/file2.txt |8  |64  |36   |40 |26
-files/file3.txt |10 |66  |33   |31 |22
+files/file1.txt	|5	|84	 |66   |67  |43
+files/file2.txt |8  |64  |36   |40  |26
+files/file3.txt |10 |66  |33   |31  |22
 
 Briefly comment:
     Does OPTFF have the fewest misses?
