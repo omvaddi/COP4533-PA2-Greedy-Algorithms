@@ -1,12 +1,38 @@
+Om Vaddi (15302285)
+Thomas Alvarado (65211333)
+
+Instructions:
+- After cloning, run "cd COP4533-PA2-Greedy-Algorithms"
+- Create an input file in the files folder.
+- See assumptions section for file formatting.
+- Run "python src/cache.py".
+- Enter the file path when prompted. ex: files/file1.txt
+- Read output.
+
+Example input (files/example.txt):
+3 9
+9 1 8 2 3 7 8 6 1
+
+Example output (files/example_output.txt):
+FIFO : 9
+LRU : 9
+OPTFF : 7
+
+Assumptions:
+- The first line of the file should be two integers, separated by a space. The first integer represents k, an integer that is greater than
+or equal to 1 and represents the cache capacity, and the second integer is m which represents the number of requests. The second line of the file should be a sequence of m numbers, with a space separating each number.
+- cache.py includes a generate_input function, which randomly generates an input file that has random requests 1-20. To run it, call
+generate_input(filename, k, m) in the main function, where filename is "files/<name>.txt", k is the cache capacity, and m is the number of requests.
+
 Question 1: Empirical Comparison
 Use at least three nontrivial input files (each containing 50 or more requests).
 
 For each file, report the number of cache misses for each policy.
 
 Input File	    |k	|m	 |FIFO |LRU |OPTFF
-tests/test1.txt	|5	|84	 |66   |67 |43
-tests/test2.txt |8  |64  |36   |40 |26
-tests/test3.txt |10 |66  |33   |31 |22
+files/file1.txt	|5	|84	 |66   |67 |43
+files/file2.txt |8  |64  |36   |40 |26
+files/file3.txt |10 |66  |33   |31 |22
 
 Briefly comment:
     Does OPTFF have the fewest misses?

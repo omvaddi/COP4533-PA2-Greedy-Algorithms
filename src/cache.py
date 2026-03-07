@@ -89,6 +89,7 @@ def generate_input(filename, k, m):
                 f.write(" ")
 
 def main():
-    call_caches("tests/test1.txt")
+    filename = input("Enter input filename: ")
+    call_caches(filename)
 if __name__ == "__main__":
     main()
