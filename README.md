@@ -15,6 +15,23 @@ Briefly comment:
     How does FIFO compare to LRU?
     FIFO and LRU have very similar number of misses. The differences are small (1-4 misses per file). FIFO had fewer misses than LRU in the first two files, whereas in the third file, LRU had fewer misses than FIFO.
 
+Question 2: Bad Sequence for LRU or FIFO
+For ( k = 3 ), investigate whether there exists a request sequence for which OPTFF incurs strictly fewer misses than LRU (or FIFO).
+
+If such a sequence exists:
+    Construct one.
+
+    Sequence:
+    3 9
+    9 1 8 2 3 7 8 6 1
+
+Compute and report the miss counts for both policies.
+LRU: 9
+OPTFF: 7
+
+In either case, briefly explain your reasoning.
+OPTFF is the theoretically optimal algorithm because it looks into the future and always makes the best possible eviction, so it will always have the minimum number of misses for any sequence. LRU evicts the least recently used page without knowledge of the future. With a smaller cache size, the difference between OPTFF and LRU (or FIFO) becomes more noticeable because the cache will fill up quicker, leading to more evictions from LRU and FIFO.
+
 Question 3: Prove OPTFF is Optimal
 Let OPTFF be Belady’s Farthest-in-Future algorithm.
 Let ( A ) be any offline algorithm that knows the full request sequence.
